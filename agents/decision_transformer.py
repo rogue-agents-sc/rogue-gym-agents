@@ -83,8 +83,11 @@ target_return = torch.tensor(TARGET_RETURN, dtype=torch.float32).reshape(1, 1)
 timesteps = torch.tensor(0, device=device, dtype=torch.long).reshape(1, 1)
 attention_mask = torch.zeros(1, 1, device=device, dtype=torch.float32)
 
+done = False
+
 # forward pass
 with torch.no_grad():
+    # while not done or timesteps < 1000:
     state_preds, action_preds, return_preds = model(
         states=states,
         actions=actions,
@@ -99,5 +102,14 @@ with torch.no_grad():
     print(return_preds)
 
     # get the max index of action_preds
-    action = action_preds.argmax(dim=2)
-    print(env.ACTIONS[action])
+    action_idx = action_preds.argmax(dim=2)
+    action = env.ACTIONS[action_idx]
+    print("action:", action, "-", env.ACTION_MEANINGS[action])
+
+    state, reward, done, _ = env.step(action)
+    print(env.state_to_image(state))
+    print(
+        len(env.state_to_image(state)),
+        len(env.state_to_image(state)[0]),
+        len(env.state_to_image(state)[0][0]),
+    )
