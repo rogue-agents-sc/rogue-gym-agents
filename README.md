@@ -39,3 +39,7 @@ Train and Run DecisionTransformer
 cd ..
 python agents/decision_transformer.py
 ```
+
+#Running Google Colab Files
+If you want to run the colab files, you will have to allow colab to run git commands
+You can use the python whl file located here https://drive.google.com/file/d/1eOHxv2MmOsFVLkaJQ-Oe1h4r6Ao2H56F/view?usp=drive_link
