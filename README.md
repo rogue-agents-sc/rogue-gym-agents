@@ -43,3 +43,8 @@ python agents/decision_transformer.py
 #Running Google Colab Files
 If you want to run the colab files, you will have to allow colab to run git commands
 You can use the python whl file located here https://drive.google.com/file/d/1eOHxv2MmOsFVLkaJQ-Oe1h4r6Ao2H56F/view?usp=drive_link
+
+## Project Overview
+This project led to the creation of a writeup titled *"REINFORCEMENT LEARNING METHODS IN THE ROGUE
+GYM ENVIRONMENT"*, which explores the core concepts, development process, and outcomes of the project. The writeup serves as an in-depth reflection on the work we've done here.
+
